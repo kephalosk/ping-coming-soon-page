@@ -64,6 +64,10 @@
                 justify-content: center;
                 margin-bottom: 70px;
                 width: 100%;
+
+                @media (max-width: 450px) {
+                    margin-bottom: 128px;
+                }
             }
 
             .inputBar {
@@ -77,6 +81,11 @@
                 grid-template-columns: 70% 30%;
                 max-width: 640px;
                 width: 100%;
+
+                @media (max-width: 450px) {
+                    grid-template-columns: 1fr;
+                    margin: 0 24px;
+                }
             }
 
             .inputBarContentButton {
@@ -86,6 +95,12 @@
                 box-shadow: 0 5px 12px -5px hsl(223, 87%, 63%);
                 color: hsl(0, 0%, 100%);
                 cursor: pointer;
+
+                @media (max-width: 450px) {
+                    font-size: 14px;
+                    margin-top: 12px;
+                    padding: 16px 24px;
+                }
             }
 
             .inputBarContentButton:focus {
@@ -98,15 +113,21 @@
             }
 
             .inputBarContentInput {
-                border: 1px solid hsl(0, 0%, 80%);
+                border: 1px solid hsl(223, 100%, 88%);
                 border-radius: 50px;
                 color: hsl(209, 33%, 12%);
                 margin-right: 12px;
-                padding: 16px 24px;
+                padding: 16px 32px;
+
+                @media (max-width: 450px) {
+                    font-size: 14px;
+                    margin-right: 0;
+                }
             }
 
             .inputBarContentInput::placeholder {
-                color: hsl(0, 0%, 80%);
+                color: hsl(223, 100%, 88%);
+                font-size: 14px;
             }
 
             .inputBarContentInput.error {
@@ -124,6 +145,7 @@
             .inputBarErrorLabelDesktop {
                 display: block;
                 font-size: 11px;
+                font-style: italic;
                 letter-spacing: 1px;
                 margin-left: 26px;
                 margin-top: 4px;
@@ -139,12 +161,26 @@
             }
 
             .inputBarErrorLabelMobile {
+                align-self: center;
+                color: hsl(354, 100%, 66%);
                 display: none;
+                font-size: 12px;
+                font-style: italic;
+                justify-content: center;
+                margin-bottom: 16px;
+                margin-top: 8px;
+                text-align: center;
             }
 
             .inputBarErrorLabelMobile.error {
                 @media (max-width: 450px) {
                     display: block;
+                }
+            }
+
+            .logo {
+                @media (max-width: 450px) {
+                    width: 70px;
                 }
             }
 
@@ -166,7 +202,7 @@
                 font-family: "Libre Franklin", sans-serif;
                 grid-template-rows: 1fr auto auto;
                 justify-content: center;
-                margin: 0 32px;
+                margin: 0 24px;
             }
 
             h1 {
@@ -174,6 +210,11 @@
                 font-size: 45px;
                 margin-bottom: 16px;
                 text-align: center;
+
+                @media (max-width: 450px) {
+                    font-size: 24px;
+                    margin-bottom: 24px;
+                }
             }
 
             h1 span {
@@ -187,6 +228,10 @@
                 margin-bottom: 40px;
                 margin-top: 16px;
                 text-align: center;
+
+                @media (max-width: 450px) {
+                    font-size: 15px;
+                }
             }
 
             .colors {
