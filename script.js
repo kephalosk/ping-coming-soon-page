@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    const messageEmpty = "Whoops! It looks like you forgot to add your email";
+    const messageInvalid = "Please provide a valid email address";
+
     inputBarContentButton.addEventListener('click',validate);
     inputBarContentButton.addEventListener('keydown', function(event) {
         if(event.key === 'Enter' || event.key === ' '){
@@ -38,16 +41,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function validate() {
-        if (isValidEmail(inputBarContentInput.value)) {
-            inputBarErrorLabelDesktop.classList.remove('error');
-            inputBarErrorLabelMobile.classList.remove('error');
-            inputBarContentInput.classList.remove('error');
-        } else {
-            inputBarErrorLabelDesktop.classList.add('error');
-            inputBarErrorLabelMobile.classList.add('error');
-            inputBarContentInput.classList.add('error');
+        if (!inputBarContentInput.value) {
+            inputBarErrorLabelDesktop.textContent = messageEmpty;
+            inputBarErrorLabelMobile.textContent = messageEmpty;
+            addError();
+            return;
         }
+
+        if (isValidEmail(inputBarContentInput.value)) {
+            removeError();
+        } else {
+            inputBarErrorLabelDesktop.textContent = messageInvalid;
+            inputBarErrorLabelMobile.textContent = messageInvalid;
+            addError();
+        }
+
         this.blur();
+    }
+
+    function addError() {
+        inputBarErrorLabelDesktop.classList.add('error');
+        inputBarErrorLabelMobile.classList.add('error');
+        inputBarContentInput.classList.add('error');
+    }
+
+    function removeError() {
+        inputBarErrorLabelDesktop.classList.remove('error');
+        inputBarErrorLabelMobile.classList.remove('error');
+        inputBarContentInput.classList.remove('error');
     }
 
     function isValidEmail(email) {
