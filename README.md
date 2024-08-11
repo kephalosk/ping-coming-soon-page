@@ -147,7 +147,7 @@ function validate() {
 ```
 
 I learned to set svgs inline to change their color instead of using <img> that doesnt allow to overwrite the color:
-```css
+```html
 <div class="footerSocialBar">
 <svg tabindex="3" class="footerSocialBarIcon footerSocialBarIconFacebook" fill="hsl(209, 33%, 12%)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="32px" height="32px" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve">
