@@ -4,6 +4,7 @@
         <meta charset="UTF8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Libre+Franklin">
         <title>kephalosk | Ping Coming Soon Page</title>
         <style>
             .attribution {
@@ -14,28 +15,227 @@
             .attribution a {
                 color: hsl(228, 45%, 44%);
             }
+
+            .footer {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .footerCopyright {
+                color: hsl(0, 0%, 59%);
+                font-size: 12px;
+                margin-bottom: 50px;
+            }
+
+            .footerSocialBar {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 28px;
+                width: 120px;
+            }
+
+            .footerSocialBarIcon {
+                width: 32px;
+            }
+
+            .footerSocialBarIcon:focus {
+                cursor: pointer;
+                fill: hsl(223, 87%, 63%);
+                outline: none;
+            }
+
+            .footerSocialBarIcon:hover {
+                cursor: pointer;
+                fill: hsl(223, 87%, 63%);
+            }
+
+            .image {
+                display: flex;
+                justify-content: center;
+                max-width: 640px;
+                width: 100%;
+            }
+
+            .imageContainer {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 70px;
+                width: 100%;
+            }
+
+            .inputBar {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .inputBarContent {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                max-width: 640px;
+                width: 100%;
+            }
+
+            .inputBarContentButton {
+                background-color: hsl(223, 87%, 63%);
+                border: 0;
+                border-radius: 50px;
+                box-shadow: 0 5px 20px -10px hsl(223, 87%, 63%);
+                color: hsl(0, 0%, 100%);
+            }
+
+            .inputBarContentButton:focus {
+                background-color: hsl(223, 100%, 75%);
+                outline: none;
+            }
+
+            .inputBarContentButton:hover {
+                background-color: hsl(223, 100%, 75%);
+            }
+
+            .inputBarContentInput {
+                border: 1px solid hsl(0, 0%, 80%);
+                border-radius: 50px;
+                color: hsl(209, 33%, 12%);
+                margin-right: 12px;
+                padding: 16px 24px;
+            }
+
+            .inputBarContentInput::placeholder {
+                color: hsl(0, 0%, 80%);
+            }
+
+            .inputBarErrorContainer {
+                align-self: center;
+                color: hsl(354, 100%, 66%);
+                display: flex;
+                justify-content: center;
+                margin-bottom: 60px;
+                opacity: 0;
+            }
+
+            .inputBarErrorContainer.error {
+                opacity: 1;
+            }
+
+            .inputBarErrorLabelDesktop {
+                display: block;
+                font-size: 11px;
+                letter-spacing: 1px;
+                margin-left: 51px;
+                margin-top: 4px;
+                max-width: 640px;
+                opacity: 1;
+                width: 100%;
+            }
+
+            .inputBarErrorLabelMobile {
+                display: none;
+            }
+
+            .logoContainer {
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 60px;
+                margin-top: 85px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                align-items: center;
+                display: grid;
+                font-family: "Libre Franklin", sans-serif;
+                grid-template-rows: 1fr auto auto;
+                justify-content: center;
+                margin: 0;
+            }
+
+            h1 {
+                color: hsl(209, 33%, 12%);
+                font-size: 45px;
+                margin-bottom: 16px;
+                text-align: center;
+            }
+
+            h1 span {
+                color: hsl(0, 0%, 59%);
+                font-weight: normal;
+            }
+
+            p {
+                color: hsl(0, 0%, 59%);
+                font-size: 20px;
+                margin-bottom: 40px;
+                margin-top: 16px;
+                text-align: center;
+            }
+
+            .colors {
+                color: hsl(223, 87%, 63%);
+                color: hsl(223, 100%, 88%);
+                color: hsl(354, 100%, 66%);
+                color: hsl(0, 0%, 59%);
+                color: hsl(209, 33%, 12%);
+            }
         </style>
     </head>
     <body>
         <main>
             <header>
-                <img src="images/logo.svg" alt="ping logo">
-                <h1>We are launching soon!</h1>
+                <div class="logoContainer">
+                    <img class="logo" src="images/logo.svg" alt="ping logo">
+                </div>
+                <h1><span>We are launching</span> soon!</h1>
                 <p>Subscribe and get notified</p>
             </header>
             <div class="inputBar">
-                <input placeholder="example@email/com">
-                <label class="inputBarError inputBarErrorMobile"></label>
-                <button>Notify Me</button>
+                <div class="inputBarContent">
+                    <input class="inputBarContentInput" placeholder="Your email address..." tabindex="1">
+                    <label class="inputBarErrorLabel inputBarErrorLabelMobile">Please provide a valid email address</label>
+                    <button class="inputBarContentButton" tabindex="2">Notify Me</button>
+                </div>
             </div>
-            <label class="inputBarError inputBarErrorDesktop"></label>
-            <img src="images/illustration-dashboard.png" alt="dashboard image">
+            <div class="inputBarErrorContainer">
+                <label class="inputBarErrorLabel inputBarErrorLabelDesktop">Please provide a valid email address</label>
+            </div>
+            <dic class="imageContainer">
+                <img class="image" src="images/illustration-dashboard.png" alt="dashboard image">
+            </dic>
         </main>
         <footer class="footer">
             <div class="footerSocialBar">
-                <img src="images/facebook.svg" alt="facebook icon">
-                <img src="images/twitter.svg" alt="twitter icon">
-                <img src="images/instagram.svg" alt="instagram icon">
+                <svg tabindex="3" class="footerSocialBarIcon" fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="32px" height="32px" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve">
+<path d="M130,2C59.308,2,2,59.308,2,130s57.308,128,128,128s128-57.308,128-128S200.692,2,130,2z M179,71h-24
+	c-6.627,0-12,5.373-12,12v24h36l-4,32h-32v80h-32v-80H82v-32h29V82.352c0-23.519,19.798-42.188,43.277-40.806L179,43V71z"/>
+</svg>
+                <svg tabindex="4" class="footerSocialBarIcon" fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="32px" height="32px" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve">
+<path d="M164.58,64H95.42C78.1,64,64,78.1,64,95.42v69.16C64,181.9,78.1,196,95.42,196h69.16c17.32,0,31.42-14.1,31.42-31.42V95.42
+	C196,78.1,181.9,64,164.58,64z M130,171.1c-22.66,0-41.1-18.44-41.1-41.1s18.44-41.1,41.1-41.1s41.1,18.44,41.1,41.1
+	S152.66,171.1,130,171.1z M172.22,97.3c-5.3,0-9.6-4.3-9.6-9.61c0-5.3,4.3-9.6,9.6-9.6c5.31,0,9.61,4.3,9.61,9.6
+	C181.83,93,177.53,97.3,172.22,97.3z M130,102.9c-14.94,0-27.1,12.16-27.1,27.1s12.16,27.1,27.1,27.1s27.1-12.16,27.1-27.1
+	S144.94,102.9,130,102.9z M130,2C59.31,2,2,59.31,2,130s57.31,128,128,128s128-57.31,128-128S200.69,2,130,2z M210,164.58
+	c0,25.04-20.38,45.42-45.42,45.42H95.42C70.38,210,50,189.62,50,164.58V95.42C50,70.38,70.38,50,95.42,50h69.16
+	C189.62,50,210,70.38,210,95.42V164.58z"/>
+</svg>
+                <svg tabindex="5" class="footerSocialBarIcon" fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="32px" height="32px" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve">
+<path d="M130,2C59.31,2,2,59.31,2,130s57.31,128,128,128s128-57.31,128-128S200.69,2,130,2z M194.08,97.09l0.11,4.28
+	c0,50.62-33.26,94.13-94.12,94.13c-18.69,0-36.07-5.48-50.71-14.89c2.59,0.3,5.22,0.46,7.89,0.46c15.5,0,29.77-5.27,41.08-14.14
+	c-14.47-0.26-26.43-9.08-30.64-22.23c5.11,0.82,11.26,0.12,14.69-1.29c-7.56-1.53-14.19-5.63-18.94-11.36
+	c-4.74-5.72-7.59-13.07-7.59-21.08c4.46,2.48,9.56,3.55,14.98,3.74c-8.87-5.93-14.71-16.06-14.71-27.54
+	c0-6.06,1.62-11.75,4.47-16.62c16.32,20.01,40.7,33.18,68.19,34.56c-0.57-2.42-0.86-4.95-0.86-7.54c0-18.26,14.82-33.07,33.09-33.07
+	c9.52,0,17.54,3.99,23.11,9.42c6.25-0.21,14.88-3.21,22.05-7c-2.47,7.71-7.71,14.2-14.54,18.29c6.69-0.26,12.43-1.65,18.36-4.28
+	C205.57,87.56,200.58,92.46,194.08,97.09z"/>
+</svg>
             </div>
             <label class="footerCopyright">&copy; Copyright Ping. All rights reserved.</label>
         </footer>
