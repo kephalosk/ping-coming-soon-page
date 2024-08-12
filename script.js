@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputBarErrorLabelDesktop.textContent = messageEmpty;
             inputBarErrorLabelMobile.textContent = messageEmpty;
             addError();
+            this.blur();
             return;
         }
 
